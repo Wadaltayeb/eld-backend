@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: driveledger-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn eld_project.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: eld_project.settings
+      - key: SECRET_KEY
+        value: your-secret-key
+      - key: ALLOWED_HOSTS
+        value: render.com
