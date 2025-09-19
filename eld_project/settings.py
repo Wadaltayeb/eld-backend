@@ -11,7 +11,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key')
 DEBUG = os.getenv('RENDER') != 'TRUE'
 
 # Allowed hosts
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = os.getenv('https://eld-backend-iybd.onrender.com', '*').split(',')
 
 # Installed apps
 INSTALLED_APPS = [
