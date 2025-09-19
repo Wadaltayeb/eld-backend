@@ -3,8 +3,9 @@ services:
     name: driveledger-backend
     env: python
     buildCommand: |
-       python manage.py collectstatic --noinput
-    buildCommand: ""
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
     startCommand: gunicorn eld_project.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
@@ -13,3 +14,5 @@ services:
         value: your-secret-key
       - key: ALLOWED_HOSTS
         value: render.com
+      - key: RENDER
+        value: TRUE
