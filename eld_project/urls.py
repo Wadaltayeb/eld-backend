@@ -19,13 +19,8 @@ from django.urls import path, include
 from django.shortcuts import render
 
 urlpatterns = [
-    # 🌟 Homepage with animated welcome screen
-    path('', lambda request: render(request, 'home.html')),
-
-    # 🔗 API routes (replace 'your_api_app' with your actual app name)
-    path('api/', include('eld_api.urls')),
-
-    # 🛠 Django admin panel
-    path('admin/', admin.site.urls),
+    path('', lambda request: render(request, 'home.html')), 
+    path('api/', include('eld_api.urls')),                   
+    path('admin/', admin.site.urls),                        
 ]
 
