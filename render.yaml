@@ -2,6 +2,8 @@ services:
   - type: web
     name: driveledger-backend
     env: python
+    buildCommand: |
+       python manage.py collectstatic --noinput
     buildCommand: ""
     startCommand: gunicorn eld_project.wsgi:application
     envVars:

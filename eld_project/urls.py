@@ -16,8 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import render
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # ← هذا هو رابط لوحة التحكم
-    path('', include('eld_api.urls')),  # ← رابط التطبيق الخاص بك
+    # 🌟 Homepage with animated welcome screen
+    path('', lambda request: render(request, 'home.html')),
+
+    # 🔗 API routes (replace 'your_api_app' with your actual app name)
+    path('api/', include('eld_api.urls')),
+
+    # 🛠 Django admin panel
+    path('admin/', admin.site.urls),
 ]
+
